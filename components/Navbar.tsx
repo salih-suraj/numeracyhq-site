@@ -42,9 +42,9 @@ export default function Navbar() {
           <Image
             src="/nmchq-logo.jpg"
             alt="NumeracyHQ"
-            width={140}
-            height={44}
-            className="h-11 w-auto object-contain"
+            width={160}
+            height={52}
+            className="h-14 w-auto object-contain"
             priority
           />
         </Link>
