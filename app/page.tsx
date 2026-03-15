@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, Play, Sparkles, BookOpen, Wand2 } from 'lucide-react'
-import WaitlistForm from '@/components/WaitlistForm'
+import { ArrowRight, Play, Sparkles, BookOpen } from 'lucide-react'
 
 /* ─── Hero sine-wave SVG ─────────────────────────────────────────────────── */
 function SineWaveSVG() {
@@ -61,18 +60,6 @@ const services = [
     glow: 'glow-card-pink',
     border: 'border-pink/20',
     iconBg: 'bg-pink/10 text-pink',
-  },
-  {
-    icon: Wand2,
-    title: 'NumeracyHQ Studio',
-    badge: 'Coming Soon',
-    body: 'A drag-and-drop animation tool for math educators. No code required. Create Manim-quality videos with a visual interface.',
-    href: '/studio',
-    cta: 'Join the Waitlist',
-    color: 'gold',
-    glow: 'glow-card-gold',
-    border: 'border-gold/20',
-    iconBg: 'bg-gold/10 text-gold',
   },
 ]
 
@@ -163,14 +150,6 @@ export default function HomePage() {
       <section className="border-y border-border bg-card/40 py-5 px-6">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-center items-center gap-8 text-muted text-sm">
           <span className="flex items-center gap-2">
-            <span className="text-pink font-bold">190+</span> TikTok followers
-          </span>
-          <span className="hidden sm:block text-border">|</span>
-          <span className="flex items-center gap-2">
-            <span className="text-electric font-bold">YouTube</span> channel growing
-          </span>
-          <span className="hidden sm:block text-border">|</span>
-          <span className="flex items-center gap-2">
             Built with <span className="text-snow font-medium">Manim CE</span>
           </span>
           <span className="hidden sm:block text-border">|</span>
@@ -193,17 +172,12 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {services.map(({ icon: Icon, title, badge, body, href, cta, glow, border, iconBg }) => (
+            {services.map(({ icon: Icon, title, body, href, cta, glow, border, iconBg }) => (
               <div
                 key={title}
                 className={`${glow} relative flex flex-col p-8 rounded-2xl bg-card border ${border} transition-all duration-300`}
               >
-                {badge && (
-                  <span className="absolute top-4 right-4 badge bg-gold/10 text-gold border border-gold/30">
-                    {badge}
-                  </span>
-                )}
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${iconBg} mb-6`}>
+<div className={`w-12 h-12 rounded-xl flex items-center justify-center ${iconBg} mb-6`}>
                   <Icon size={22} />
                 </div>
                 <h3 className="font-display font-bold text-xl text-snow mb-3">{title}</h3>
@@ -262,35 +236,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── STUDIO WAITLIST ──────────────────────────────────────────────── */}
-      <section className="py-24 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 dot-grid opacity-20 pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-pink/5 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="max-w-3xl mx-auto text-center relative z-10">
-          <span className="badge bg-gold/10 text-gold border border-gold/30 mb-6">
-            Coming in 2027
-          </span>
-          <h2 className="font-display font-bold text-4xl sm:text-5xl text-snow mb-6 leading-tight">
-            The Easiest Way to Animate Math —{' '}
-            <span className="gradient-text">Coming Soon</span>
-          </h2>
-          <p className="text-snow/70 text-lg leading-relaxed mb-10">
-            NumeracyHQ Studio will let any educator create beautiful mathematical animations
-            without writing a single line of code. Think Filmora, but for math.
-            We&apos;re building it now.
-          </p>
-
-          <div className="flex justify-center mb-4">
-            <WaitlistForm
-              formName="studio-waitlist"
-              buttonLabel="Notify Me When It Launches"
-              accentColor="pink"
-            />
-          </div>
-          <p className="text-muted text-xs">No spam. One email when we launch.</p>
-        </div>
-      </section>
     </>
   )
 }

@@ -9,7 +9,6 @@ const links = [
   { href: '/services',  label: 'Services'  },
   { href: '/portfolio', label: 'Portfolio' },
   { href: '/app',       label: 'App'       },
-  { href: '/studio',    label: 'Studio'    },
   { href: '/about',     label: 'About'     },
 ]
 
@@ -62,11 +61,6 @@ export default function Navbar() {
                   }`}
                 >
                   {label}
-                  {label === 'Studio' && (
-                    <span className="ml-2 badge bg-gold/10 text-gold border border-gold/30">
-                      Soon
-                    </span>
-                  )}
                 </Link>
               </li>
             )
@@ -107,11 +101,6 @@ export default function Navbar() {
                 }`}
               >
                 {label}
-                {label === 'Studio' && (
-                  <span className="badge bg-gold/10 text-gold border border-gold/30">
-                    Soon
-                  </span>
-                )}
               </Link>
             )
           })}

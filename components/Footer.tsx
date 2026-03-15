@@ -12,7 +12,6 @@ function TikTokIcon({ size = 18 }: { size?: number }) {
 
 const products = [
   { href: '/app',       label: 'NumeracyHQ App' },
-  { href: '/studio',    label: 'NumeracyHQ Studio' },
   { href: '/services',  label: 'Animation Services' },
 ]
 
