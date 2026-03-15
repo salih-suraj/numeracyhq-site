@@ -21,8 +21,7 @@ const features = [
 const packages = [
   {
     name:      'Starter',
-    price:     '₦60,000',
-    usd:       '~$39',
+    price:     '$39',
     length:    'Up to 30 seconds',
     revisions: '1 revision',
     delivery:  '3 business days',
@@ -36,8 +35,7 @@ const packages = [
   },
   {
     name:      'Standard',
-    price:     '₦150,000',
-    usd:       '~$97',
+    price:     '$97',
     length:    'Up to 90 seconds',
     revisions: '2 revisions',
     delivery:  '5 business days',
@@ -53,8 +51,7 @@ const packages = [
   },
   {
     name:      'Premium',
-    price:     '₦400,000',
-    usd:       '~$258',
+    price:     '$258',
     length:    'Up to 5 minutes',
     revisions: '3 revisions',
     delivery:  '10 business days',
@@ -157,7 +154,7 @@ export default function ServicesPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-display font-bold text-4xl text-snow mb-4">Packages</h2>
-            <p className="text-muted">All prices in NGN. USD equivalent shown for reference.</p>
+            <p className="text-muted">All prices in USD.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -180,7 +177,6 @@ export default function ServicesPage() {
                   <h3 className="font-display font-bold text-xl text-snow mb-1">{pkg.name}</h3>
                   <div className="flex items-end gap-2">
                     <span className="font-display font-bold text-3xl text-electric">{pkg.price}</span>
-                    <span className="text-muted text-sm pb-1">{pkg.usd}</span>
                   </div>
                 </div>
 
