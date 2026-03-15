@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
@@ -38,15 +37,13 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center">
-          <Image
-            src="/nmchq-logo.jpg"
-            alt="NumeracyHQ"
-            width={160}
-            height={52}
-            className="h-14 w-auto object-contain"
-            priority
-          />
+        <Link href="/" className="flex flex-col leading-none group">
+          <span className="font-display font-bold text-xl text-electric tracking-tight group-hover:text-snow transition-colors">
+            NumeracyHQ
+          </span>
+          <span className="text-[10px] text-muted tracking-widest uppercase">
+            by Salix Systems
+          </span>
         </Link>
 
         {/* Desktop nav */}

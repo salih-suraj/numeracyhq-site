@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { Youtube, Mail } from 'lucide-react'
 
 // TikTok icon (not in lucide)
@@ -30,14 +29,10 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link href="/" className="block mb-4">
-              <Image
-                src="/nmchq-logo.jpg"
-                alt="NumeracyHQ"
-                width={120}
-                height={38}
-                className="h-10 w-auto object-contain"
-              />
+            <Link href="/" className="block mb-3">
+              <span className="font-display font-bold text-xl text-electric">
+                NumeracyHQ
+              </span>
             </Link>
             <p className="text-muted text-sm leading-relaxed mb-2">
               Mathematical animations for educators, researchers, and content creators.
