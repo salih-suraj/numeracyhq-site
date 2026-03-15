@@ -94,7 +94,7 @@ export default function HomePage() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-electric/30 bg-electric/5 text-electric text-xs font-medium mb-8">
               <Sparkles size={12} />
-              Powered by Manim Community Edition
+              Math animation for educators
             </div>
 
             <h1 className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-6">
