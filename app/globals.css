@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-space-grotesk: 'Space Grotesk', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #111128;
+  color: #F0F0FF;
+  font-family: var(--font-inter);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: #111128; }
+::-webkit-scrollbar-thumb  { background: #2A2A5A; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #00BFFF; }
+
+/* Animated sine wave SVG in hero */
+@keyframes draw {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: 0; }
+}
+
+.sine-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 3s ease-in-out forwards;
+}
+
+/* Glowing card hover */
+.glow-card {
+  transition: all 0.3s ease;
+}
+.glow-card:hover {
+  box-shadow: 0 0 30px rgba(0, 191, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Pink glow variant */
+.glow-card-pink:hover {
+  box-shadow: 0 0 30px rgba(224, 64, 251, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Gold glow variant */
+.glow-card-gold:hover {
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Section fade-in on scroll (handled by Intersection Observer) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Video phone frame */
+.phone-frame {
+  border-radius: 2rem;
+  border: 3px solid #2A2A5A;
+  box-shadow:
+    0 0 0 1px #1A1A3E,
+    0 0 40px rgba(0, 191, 255, 0.2),
+    0 20px 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #00BFFF, #E040FB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtle dot grid background */
+.dot-grid {
+  background-image: radial-gradient(circle, #2A2A5A 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
