@@ -4,7 +4,7 @@ import WaitlistForm from '@/components/WaitlistForm'
 
 export const metadata: Metadata = {
   title: 'NumeracyHQ App',
-  description: 'An interactive math learning app for children — counting, patterns, and number sense. Now in testing on Android.',
+  description: 'An interactive math learning app for children — counting, patterns, and number sense. Available on Android.',
 }
 
 const features = [
@@ -51,7 +51,7 @@ export default function AppPage() {
           {/* Left */}
           <div>
             <span className="badge bg-neon/10 text-neon border border-neon/30 mb-6">
-              Now in Testing — Android
+              Available on Android
             </span>
             <h1 className="font-display font-bold text-5xl sm:text-6xl text-snow leading-tight mb-6">
               Math for{' '}
@@ -66,7 +66,7 @@ export default function AppPage() {
             <div className="space-y-4">
               <div>
                 <p className="text-muted text-sm mb-3">
-                  Be first when we launch on Google Play:
+                  Get it on Google Play:
                 </p>
                 <WaitlistForm
                   formName="app-waitlist"
@@ -151,11 +151,10 @@ export default function AppPage() {
       <section className="py-24 px-6">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="font-display font-bold text-4xl text-snow mb-4">
-            Be First on Google Play
+            Download on Google Play
           </h2>
           <p className="text-muted text-lg mb-8">
-            The app is in closed testing. Leave your email and we&apos;ll notify you
-            the moment it&apos;s available.
+            Leave your email and we&apos;ll send you the direct download link.
           </p>
           <div className="flex justify-center">
             <WaitlistForm

@@ -18,10 +18,10 @@ const products = [
   },
   {
     name:    'NumeracyHQ App',
-    status:  'In Testing',
+    status:  'Live on Android',
     color:   'text-electric',
     badge:   'bg-electric/10 text-electric border-electric/30',
-    desc:    'An interactive math learning app for children — counting, pattern recognition, and number sense. Currently in closed testing on Android.',
+    desc:    'An interactive math learning app for children — counting, pattern recognition, and number sense. Available on Android.',
     href:    '/app',
   },
   {

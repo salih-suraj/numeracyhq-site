@@ -154,7 +154,7 @@ export default function HomePage() {
           </span>
           <span className="hidden sm:block text-border">|</span>
           <span className="flex items-center gap-2">
-            App on <span className="text-neon font-medium">Google Play</span> (testing)
+            App on <span className="text-neon font-medium">Google Play</span>
           </span>
         </div>
       </section>
