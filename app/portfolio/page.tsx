@@ -27,6 +27,13 @@ const videos = [
     description: 'Mathematical concepts brought to life through programmatic animation.',
     isShort:     true,
   },
+  {
+    id:          'JIz67wRHTsA',
+    title:       'Sum of Cubes is always a perfect square...',
+    category:    'Mathematics',
+    description: 'A visual proof of why the sum of the first n cubes is always a perfect square.',
+    isShort:     true,
+  },
   // ── ADD MORE VIDEOS BELOW THIS LINE ───────────────────────────────────
   // {
   //   id:      'YOUR_VIDEO_ID',

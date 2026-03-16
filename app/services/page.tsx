@@ -154,7 +154,7 @@ export default function ServicesPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-display font-bold text-4xl text-snow mb-4">Packages</h2>
-            <p className="text-muted">All prices in USD.</p>
+            <p className="text-muted">Pick a package and get your animation delivered in days — not weeks.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
