@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Rocket, Heart, Target } from 'lucide-react'
 
@@ -89,12 +90,14 @@ export default function AboutPage() {
             {/* Avatar placeholder */}
             <div className="flex justify-center lg:justify-start">
               <div className="relative">
-                <div className="w-64 h-64 rounded-3xl bg-card border border-electric/20 flex items-center justify-center overflow-hidden shadow-2xl shadow-electric/10">
-                  <div className="text-center">
-                    <div className="text-7xl mb-3">👨‍💻</div>
-                    <p className="font-display font-bold text-electric text-lg">Abba Suraj</p>
-                    <p className="text-muted text-sm">Founder, Salix Systems</p>
-                  </div>
+                <div className="w-64 h-64 rounded-3xl border border-electric/20 overflow-hidden shadow-2xl shadow-electric/10">
+                  <Image
+                    src="/abba-suraj.png"
+                    alt="Abba Suraj — Founder, Salix Systems"
+                    width={256}
+                    height={256}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 {/* Floating badge */}
                 <div className="absolute -bottom-4 -right-4 px-4 py-2 rounded-xl bg-card border border-neon/30 shadow-lg">
