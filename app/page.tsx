@@ -1,79 +1,87 @@
 import Link from 'next/link'
-import { ArrowRight, Play, Sparkles, BookOpen } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowRight, BookOpen, Users, BarChart3 } from 'lucide-react'
+import NewsletterForm from '@/components/NewsletterForm'
 
-/* ─── Hero sine-wave SVG ─────────────────────────────────────────────────── */
-function SineWaveSVG() {
+function CoordinateSVG() {
   return (
     <svg
-      viewBox="0 0 400 120"
+      viewBox="0 0 320 220"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-full opacity-60"
+      aria-hidden="true"
+      className="w-full max-w-sm opacity-90"
     >
+      {/* Faint grid */}
+      {[55, 110, 165].map(y => (
+        <line key={`h${y}`} x1="20" y1={y} x2="300" y2={y} stroke="#0F172A" strokeWidth="0.5" opacity="0.07" />
+      ))}
+      {[70, 130, 190, 250].map(x => (
+        <line key={`v${x}`} x1={x} y1="20" x2={x} y2="200" stroke="#0F172A" strokeWidth="0.5" opacity="0.07" />
+      ))}
       {/* Axes */}
-      <line x1="10" y1="60" x2="390" y2="60" stroke="#2A2A5A" strokeWidth="1" />
-      <line x1="20" y1="10" x2="20"  y2="110" stroke="#2A2A5A" strokeWidth="1" />
-      {/* Sine wave */}
+      <line x1="20" y1="155" x2="300" y2="155" stroke="#0F172A" strokeWidth="1.5" opacity="0.2" />
+      <line x1="50" y1="20"  x2="50"  y2="200" stroke="#0F172A" strokeWidth="1.5" opacity="0.2" />
+      {/* Arrowheads */}
+      <polyline points="296,151 300,155 296,159" stroke="#0F172A" strokeWidth="1.5" opacity="0.2" />
+      <polyline points="46,24 50,20 54,24"       stroke="#0F172A" strokeWidth="1.5" opacity="0.2" />
+      {/* Parabola curve */}
       <path
-        d="M 20 60 C 40 60, 50 10, 70 10 S 100 110, 120 110 S 150 10, 170 10 S 200 110, 220 110 S 250 10, 270 10 S 300 110, 320 110 S 350 10, 370 10 S 390 60, 390 60"
-        stroke="#00BFFF"
+        d="M 30 180 C 60 180, 100 25, 160 25 S 260 180, 290 180"
+        stroke="#B45309"
         strokeWidth="2.5"
         strokeLinecap="round"
-        className="sine-path"
-      />
-      {/* Cosine overlay */}
-      <path
-        d="M 20 10 C 40 10, 50 60, 70 60 S 100 110, 120 60 S 150 10, 170 60 S 200 110, 220 60 S 250 10, 270 60 S 300 110, 320 60 S 350 10, 370 60"
-        stroke="#E040FB"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeDasharray="4 4"
-        opacity="0.5"
+        className="draw-path"
       />
       {/* Labels */}
-      <text x="380" y="55"  fill="#00BFFF" fontSize="9" fontFamily="monospace">sin</text>
-      <text x="380" y="30"  fill="#E040FB" fontSize="9" fontFamily="monospace">cos</text>
+      <text x="280" y="148" fill="#0F172A" fontSize="11" fontFamily="serif" fontStyle="italic" opacity="0.35">x</text>
+      <text x="55"  y="24"  fill="#0F172A" fontSize="11" fontFamily="serif" fontStyle="italic" opacity="0.35">y</text>
+      <text x="258" y="50"  fill="#B45309" fontSize="11" fontFamily="serif" fontStyle="italic">f(x)</text>
+      {/* Origin dot */}
+      <circle cx="50" cy="155" r="2.5" fill="#0F172A" opacity="0.25" />
     </svg>
   )
 }
 
-/* ─── What We Do cards ───────────────────────────────────────────────────── */
-const services = [
+const whatIDo = [
   {
-    icon: Play,
-    title: 'Mathematical Animation',
-    body: 'Custom Manim animations for your course, channel, or presentation. 30 seconds to 5 minutes. Delivered in days, not weeks.',
-    href: '/services',
-    cta: 'See Services',
-    color: 'electric',
-    glow: 'glow-card',
-    border: 'border-electric/20',
-    iconBg: 'bg-electric/10 text-electric',
+    icon: Users,
+    title: 'Teacher Development',
+    body: 'Designing and evaluating professional development programmes for mathematics teachers across Sub-Saharan Africa, with a focus on classroom transfer and system-level change.',
   },
   {
     icon: BookOpen,
-    title: 'NumeracyHQ for Kids',
-    body: 'An interactive math learning app for children — counting, pattern matching, and number sense. Built for fun, designed for learning.',
-    href: '/app',
-    cta: 'Learn More',
-    color: 'pink',
-    glow: 'glow-card-pink',
-    border: 'border-pink/20',
-    iconBg: 'bg-pink/10 text-pink',
+    title: 'Learning Science & Numeracy',
+    body: 'Applying evidence from cognitive science and mathematics education research to curriculum design, instructional materials, and assessment — especially in under-resourced contexts.',
+  },
+  {
+    icon: BarChart3,
+    title: 'EdTech, Evaluated',
+    body: 'Building, procuring, and critically reviewing education technology tools — with monitoring frameworks, data infrastructure, and evidence of impact built in from the start.',
   },
 ]
 
-/* ─── Featured portfolio videos ─────────────────────────────────────────── */
-const featured = [
+const featuredVideos = [
+  { id: 'ksvfU_CUmm0', title: 'Statistics Explained Through Animation', topic: 'Statistics' },
+  { id: 'ETFna9v6Yqc', title: 'Mathematical Visualization with Manim',  topic: 'Mathematics' },
+  { id: '[REPLACE-VIDEO-ID]', title: '[REPLACE: Video 3 title]',         topic: '[REPLACE]'  },
+]
+
+const featuredWriting = [
   {
-    id:       'ksvfU_CUmm0',
-    title:    'Statistics Explained',
-    category: 'Math',
+    title:   'Why Teacher Development, Not Technology, Is the Real EdTech Solution',
+    date:    'June 2025',
+    summary: 'The evidence is clear: tool adoption without teacher capacity is inert. What the research says about where to invest — and why PD almost always wins.',
   },
   {
-    id:       'ETFna9v6Yqc',
-    title:    'Mathematical Animation',
-    category: 'Math',
+    title:   'The Numeracy Gap: What the Data Says About Mathematics in Sub-Saharan Africa',
+    date:    'April 2025',
+    summary: 'A synthesis of PASEC, SACMEQ, and national assessments — what it reveals about where students lose ground, and what the patterns suggest for intervention design.',
+  },
+  {
+    title:   'Designing PD Programmes that Actually Change Classroom Practice',
+    date:    'February 2025',
+    summary: 'Most teacher training does not transfer to the classroom. What design features predict classroom transfer — and how to build them in from the start.',
   },
 ]
 
@@ -81,161 +89,239 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center pt-24 pb-16 px-6 overflow-hidden">
-        {/* Background grid */}
-        <div className="absolute inset-0 dot-grid opacity-30 pointer-events-none" />
-        {/* Blue glow blob */}
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-electric/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-1/2 right-1/4 w-72 h-72 bg-pink/5 rounded-full blur-3xl pointer-events-none" />
+      <section className="relative pt-28 pb-20 px-6 overflow-hidden">
+        <div className="absolute inset-0 graph-grid pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
 
-          {/* Left: copy */}
+          {/* Copy */}
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-electric/30 bg-electric/5 text-electric text-xs font-medium mb-8">
-              <Sparkles size={12} />
-              Math animation for educators
-            </div>
-
-            <h1 className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-6">
-              Math,{' '}
-              <span className="gradient-text">Visualized.</span>
-            </h1>
-
-            <p className="text-snow/70 text-lg sm:text-xl leading-relaxed mb-10 max-w-lg">
-              We build animated mathematical explainers for educators, course creators,
-              and content teams — the kind that make students say{' '}
-              <em className="text-electric not-italic">&quot;oh, now I get it.&quot;</em>
+            <p className="text-terra text-sm font-semibold uppercase tracking-widest mb-6">
+              Mathematics Education · Teacher Development · Africa
             </p>
-
+            <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-[3.25rem] leading-[1.1] text-navy mb-6">
+              Helping African education systems teach mathematics better.
+            </h1>
+            <p className="text-charcoal text-lg leading-relaxed mb-10 max-w-xl">
+              Combining learning science, teacher professional development, and the engineering
+              to deliver it at scale — so that every child has access to a mathematics teacher
+              who knows their subject and how to teach it.
+            </p>
             <div className="flex flex-wrap gap-4">
               <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-electric text-panel font-bold text-base hover:bg-electric/80 transition-all shadow-lg shadow-electric/25 hover:shadow-electric/40"
+                href="/newsletter"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-terra text-white font-semibold text-base hover:bg-terra-hover transition-colors"
               >
-                Get a Quote
-                <ArrowRight size={18} />
+                Subscribe to the newsletter
               </Link>
               <Link
-                href="/portfolio"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-border text-snow font-semibold text-base hover:border-electric/50 hover:bg-electric/5 transition-all"
+                href="/consulting"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border border-sand text-navy font-semibold text-base hover:border-terra hover:text-terra transition-colors"
               >
-                <Play size={16} />
-                See Our Work
+                Work with me <ArrowRight size={17} />
               </Link>
             </div>
           </div>
 
-          {/* Right: animated visual */}
-          <div className="flex flex-col items-center gap-6">
-            {/* Phone frame with embedded YouTube Short */}
-            <div className="phone-frame w-56 aspect-[9/16] animate-float">
-              <iframe
-                src="https://www.youtube.com/embed/ksvfU_CUmm0?autoplay=1&mute=1&loop=1&playlist=ksvfU_CUmm0&controls=0&modestbranding=1&rel=0"
-                className="w-full h-full"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                title="NumeracyHQ animation preview"
-              />
-            </div>
-            {/* Sine wave beneath */}
-            <div className="w-full max-w-sm">
-              <SineWaveSVG />
-            </div>
+          {/* Visual */}
+          <div className="flex justify-center lg:justify-end">
+            <CoordinateSVG />
           </div>
         </div>
       </section>
 
-      {/* ── SOCIAL PROOF BAR ─────────────────────────────────────────────── */}
-      <section className="border-y border-border bg-card/40 py-5 px-6">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-center items-center gap-8 text-muted text-sm">
-          <span className="flex items-center gap-2">
-            Built with <span className="text-snow font-medium">Manim CE</span>
-          </span>
-          <span className="hidden sm:block text-border">|</span>
-          <span className="flex items-center gap-2">
-            App on <span className="text-neon font-medium">Google Play</span>
-          </span>
+      {/* ── CREDIBILITY STRIP ────────────────────────────────────────────── */}
+      <section className="border-y border-sand bg-paper py-5 px-6">
+        <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-x-8 gap-y-3">
+          <span className="text-stone text-xs font-medium uppercase tracking-wider">[REPLACE: NTI Nigeria]</span>
+          <span className="text-sand hidden sm:block">·</span>
+          <span className="text-stone text-xs font-medium uppercase tracking-wider">[REPLACE: British Council]</span>
+          <span className="text-sand hidden sm:block">·</span>
+          <span className="text-stone text-xs font-medium uppercase tracking-wider">[REPLACE: UNESCO]</span>
+          <span className="text-sand hidden sm:block">·</span>
+          <span className="text-stone text-xs font-medium uppercase tracking-wider">[REPLACE: UNICEF]</span>
+          <span className="text-sand hidden sm:block">·</span>
+          <span className="text-stone text-xs font-medium uppercase tracking-wider">[REPLACE: Ministry of Education]</span>
+          <span className="text-sand hidden sm:block">·</span>
+          <span className="text-stone text-xs font-medium uppercase tracking-wider">[REPLACE: Your EdTech Company]</span>
         </div>
       </section>
 
-      {/* ── WHAT WE DO ───────────────────────────────────────────────────── */}
+      {/* ── WHAT I DO ────────────────────────────────────────────────────── */}
       <section className="py-24 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-display font-bold text-4xl sm:text-5xl text-snow mb-4">
-              What We Do
-            </h2>
-            <p className="text-muted text-lg max-w-xl mx-auto">
-              Three products. One mission: make mathematics beautiful and accessible.
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-14">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy mb-4">What I do</h2>
+            <p className="text-stone text-lg max-w-2xl">
+              Three overlapping areas of practice, each grounded in evidence and orientated toward what actually improves outcomes for learners.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {services.map(({ icon: Icon, title, body, href, cta, glow, border, iconBg }) => (
-              <div
-                key={title}
-                className={`${glow} relative flex flex-col p-8 rounded-2xl bg-card border ${border} transition-all duration-300`}
-              >
-<div className={`w-12 h-12 rounded-xl flex items-center justify-center ${iconBg} mb-6`}>
-                  <Icon size={22} />
+            {whatIDo.map(({ icon: Icon, title, body }) => (
+              <div key={title} className="card-hover p-8 rounded-xl bg-white border border-sand">
+                <div className="w-10 h-10 rounded-lg bg-terra-subtle flex items-center justify-center mb-6">
+                  <Icon size={20} className="text-terra" />
                 </div>
-                <h3 className="font-display font-bold text-xl text-snow mb-3">{title}</h3>
-                <p className="text-muted text-sm leading-relaxed flex-1 mb-6">{body}</p>
-                <Link
-                  href={href}
-                  className="inline-flex items-center gap-1 text-sm font-semibold text-electric hover:gap-2 transition-all"
-                >
-                  {cta} <ArrowRight size={14} />
-                </Link>
+                <h3 className="font-display font-bold text-xl text-navy mb-3">{title}</h3>
+                <p className="text-charcoal text-sm leading-relaxed">{body}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-10">
+            <Link href="/consulting" className="inline-flex items-center gap-1 text-terra text-sm font-semibold link-terra">
+              See how I work with organisations <ArrowRight size={14} />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* ── FEATURED WORK ────────────────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-card/20">
-        <div className="max-w-7xl mx-auto">
+      {/* ── FEATURED VIDEOS ──────────────────────────────────────────────── */}
+      <section className="py-24 px-6 bg-paper border-y border-sand">
+        <div className="max-w-6xl mx-auto">
           <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
             <div>
-              <h2 className="font-display font-bold text-4xl sm:text-5xl text-snow mb-2">
-                Recent Work
-              </h2>
-              <p className="text-muted">Built with Manim Community Edition</p>
+              <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy mb-2">Mathematical animations</h2>
+              <p className="text-stone">Visual explanations of mathematics, made with Manim Community Edition.</p>
             </div>
-            <Link
-              href="/portfolio"
-              className="inline-flex items-center gap-1 text-electric text-sm font-semibold hover:gap-2 transition-all"
-            >
-              View All <ArrowRight size={14} />
+            <Link href="/videos" className="inline-flex items-center gap-1 text-terra text-sm font-semibold">
+              All videos <ArrowRight size={14} />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl">
-            {featured.map(({ id, title, category }) => (
-              <div key={id} className="glow-card group">
-                <div className="phone-frame aspect-[9/16] w-full max-w-[220px] mx-auto">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${id}?controls=1&modestbranding=1&rel=0`}
-                    className="w-full h-full"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    title={title}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredVideos.map(({ id, title, topic }) => (
+              <a
+                key={id}
+                href={`https://www.youtube.com/watch?v=${id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-hover group block rounded-xl overflow-hidden border border-sand bg-white"
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
+                    alt={title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-navy/20 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center shadow-md">
+                      <svg viewBox="0 0 24 24" fill="#B45309" className="w-6 h-6 ml-1">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
-                <div className="mt-4 px-1">
-                  <span className="badge bg-electric/10 text-electric border border-electric/20 mb-2">
-                    {category}
-                  </span>
-                  <h3 className="font-display font-semibold text-snow text-base">{title}</h3>
+                <div className="p-4">
+                  <span className="tag tag-terra mb-2 inline-flex">{topic}</span>
+                  <h3 className="font-display font-semibold text-navy text-base">{title}</h3>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
       </section>
 
+      {/* ── FEATURED WRITING ─────────────────────────────────────────────── */}
+      <section className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
+            <div>
+              <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy mb-2">Recent writing</h2>
+              <p className="text-stone">Evidence-based thinking on mathematics education and teacher development.</p>
+            </div>
+            <Link href="/writing" className="inline-flex items-center gap-1 text-terra text-sm font-semibold">
+              All writing <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          <div className="border border-sand rounded-xl overflow-hidden">
+            {featuredWriting.map(({ title, date, summary }) => (
+              <Link
+                key={title}
+                href="/writing"
+                className="flex flex-col sm:flex-row gap-4 sm:gap-8 p-6 bg-white border-b border-sand last:border-b-0 hover:bg-paper transition-colors group"
+              >
+                <div className="flex-shrink-0 text-stone text-sm pt-0.5 w-28">{date}</div>
+                <div>
+                  <h3 className="font-display font-semibold text-navy text-lg mb-1 group-hover:text-terra transition-colors">
+                    {title}
+                  </h3>
+                  <p className="text-stone text-sm leading-relaxed">{summary}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── NEWSLETTER BAND ──────────────────────────────────────────────── */}
+      <section className="py-20 px-6 newsletter-band">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-terra-light text-xs font-semibold uppercase tracking-widest mb-4">
+            The NumeracyHQ Newsletter
+          </p>
+          <h2 className="font-display font-bold text-3xl sm:text-4xl text-cream mb-4">
+            One idea. One piece of evidence.<br className="hidden sm:block" /> One resource.
+          </h2>
+          <p className="text-cream/70 mb-8 text-base leading-relaxed">
+            Every two weeks, for mathematics educators who want to teach better.
+            No hype. No noise. Just substance.
+          </p>
+          <div className="max-w-md mx-auto">
+            <NewsletterForm variant="dark" />
+          </div>
+          <p className="text-cream/40 text-xs mt-4">Free. No spam. Unsubscribe any time.</p>
+        </div>
+      </section>
+
+      {/* ── ABOUT TEASER ─────────────────────────────────────────────────── */}
+      <section className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy mb-5">
+                About Abba Suraj
+              </h2>
+              <div className="space-y-4 text-charcoal leading-relaxed">
+                <p>
+                  I am an education technologist and mathematics education specialist, working
+                  on the problem of technology-enabled teacher development in Africa.
+                </p>
+                <p>
+                  My background combines electrical engineering and information technology with
+                  years of practical work in teacher professional development and EdTech deployment
+                  across Sub-Saharan Africa. NumeracyHQ is the public face of that work.
+                </p>
+              </div>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-1 mt-8 text-terra font-semibold text-sm link-terra"
+              >
+                Read my full bio <ArrowRight size={14} />
+              </Link>
+            </div>
+            <div className="flex justify-center md:justify-end">
+              <div className="relative">
+                <div className="w-60 h-60 rounded-2xl overflow-hidden border border-sand shadow-md">
+                  <Image
+                    src="/abba-suraj.png"
+                    alt="Abba Suraj — Education Technologist"
+                    width={240}
+                    height={240}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-3 -right-3 px-3 py-1.5 rounded-lg bg-white border border-sand shadow-sm">
+                  <span className="text-stone text-xs font-medium">Mathematics Education · EdTech · Africa</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

@@ -1,223 +1,175 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Rocket, Heart, Target } from 'lucide-react'
+import { ArrowRight, CheckCircle } from 'lucide-react'
+import NewsletterForm from '@/components/NewsletterForm'
 
 export const metadata: Metadata = {
-  title: 'About NumeracyHQ',
-  description: 'NumeracyHQ is a product of Salix Systems — building math education tools and animated content for the next generation of learners.',
+  title: 'About — Abba Suraj',
+  description:
+    'Education technologist and mathematics education specialist working on technology-enabled teacher development in Africa.',
 }
 
-const products = [
-  {
-    name:    'Animation Services',
-    status:  'Live',
-    color:   'text-neon',
-    badge:   'bg-neon/10 text-neon border-neon/30',
-    desc:    'Custom Manim-powered mathematical animations for educators, course creators, and content teams worldwide.',
-    href:    '/services',
-  },
-  {
-    name:    'NumeracyHQ App',
-    status:  'Live on Android',
-    color:   'text-electric',
-    badge:   'bg-electric/10 text-electric border-electric/30',
-    desc:    'An interactive math learning app for children — counting, pattern recognition, and number sense. Available on Android.',
-    href:    '/app',
-  },
-  {
-    name:    'NumeracyHQ Studio',
-    status:  'Coming 2027',
-    color:   'text-gold',
-    badge:   'bg-gold/10 text-gold border-gold/30',
-    desc:    'A no-code drag-and-drop tool that lets any educator create beautiful Manim-quality animations without writing a single line of Python.',
-    href:    '/studio',
-  },
-]
-
-const values = [
-  {
-    icon:  Rocket,
-    title: 'Make Math Accessible',
-    body:  'Abstract concepts become clear when you can see them move. Every product we build is aimed at closing the gap between confusion and understanding.',
-    color: 'text-electric',
-    bg:    'bg-electric/10',
-  },
-  {
-    icon:  Heart,
-    title: 'Built for Learners',
-    body:  "Whether you're five years old learning to count or a PhD student visualising a proof, our tools are designed to meet you where you are.",
-    color: 'text-pink',
-    bg:    'bg-pink/10',
-  },
-  {
-    icon:  Target,
-    title: 'Quality Over Quantity',
-    body:  'We would rather ship one exceptional animation than ten mediocre ones. Every frame is deliberate. Every project is delivered with care.',
-    color: 'text-gold',
-    bg:    'bg-gold/10',
-  },
+const expertise = [
+  'Mathematics teacher professional development — design, facilitation, and evaluation',
+  'Curriculum alignment and instructional materials development',
+  'Learning science and cognitive science applied to mathematics education',
+  'Monitoring, evaluation, and learning (MEL) frameworks for education programmes',
+  'EdTech strategy, architecture, and independent evidence-based review',
+  'Numeracy and early mathematics — assessment, pedagogy, and intervention design',
+  'Programme design for large-scale and donor-funded education initiatives',
+  'Mathematical visualization and animated content production (Manim)',
 ]
 
 export default function AboutPage() {
   return (
     <>
-      {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="pt-32 pb-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 dot-grid opacity-20 pointer-events-none" />
-        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-electric/5 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <span className="badge bg-electric/10 text-electric border border-electric/30 mb-6">
-            Salix Systems
-          </span>
-          <h1 className="font-display font-bold text-5xl sm:text-6xl text-snow leading-tight mb-6">
-            Making Math{' '}
-            <span className="gradient-text">Beautiful</span>
-          </h1>
-          <p className="text-snow/70 text-xl leading-relaxed max-w-2xl mx-auto">
-            NumeracyHQ is a product suite by Salix Systems — a one-person studio on a mission
-            to make mathematical ideas accessible to everyone through animation, apps, and tools.
-          </p>
+      {/* ── HEADER ───────────────────────────────────────────────────────── */}
+      <section className="pt-28 pb-16 px-6 border-b border-sand">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-terra text-sm font-semibold uppercase tracking-widest mb-4">About</p>
+          <h1 className="font-display font-bold text-4xl sm:text-5xl text-navy">Abba Suraj</h1>
         </div>
       </section>
 
-      {/* ── FOUNDER ──────────────────────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-card/20">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      {/* ── BIO & PHOTO ──────────────────────────────────────────────────── */}
+      <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16">
 
-            {/* Avatar placeholder */}
-            <div className="flex justify-center lg:justify-start">
-              <div className="relative">
-                <div className="w-64 h-64 rounded-3xl border border-electric/20 overflow-hidden shadow-2xl shadow-electric/10">
-                  <Image
-                    src="/abba-suraj.png"
-                    alt="Abba Suraj — Founder, Salix Systems"
-                    width={256}
-                    height={256}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                {/* Floating badge */}
-                <div className="absolute -bottom-4 -right-4 px-4 py-2 rounded-xl bg-card border border-neon/30 shadow-lg">
-                  <span className="text-neon text-xs font-semibold">Manim · Python · EdTech</span>
-                </div>
-              </div>
+          {/* Photo & details */}
+          <div className="flex flex-col items-start gap-6">
+            <div className="w-full max-w-[260px] rounded-2xl overflow-hidden border border-sand shadow-sm">
+              <Image
+                src="/abba-suraj.png"
+                alt="Abba Suraj — Education Technologist"
+                width={260}
+                height={320}
+                className="w-full h-auto object-cover"
+              />
             </div>
+            <div className="space-y-1.5">
+              <p className="text-navy text-sm font-semibold">Abba Suraj</p>
+              <p className="text-stone text-sm">Education Technologist</p>
+              <p className="text-stone text-sm">Mathematics Education Specialist</p>
+              <p className="text-stone text-sm">[REPLACE: Location, Nigeria]</p>
+            </div>
+            <Link
+              href="/consulting"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-terra text-white font-semibold text-sm hover:bg-terra-hover transition-colors"
+            >
+              Work with me <ArrowRight size={15} />
+            </Link>
+          </div>
 
-            {/* Bio */}
-            <div>
-              <h2 className="font-display font-bold text-4xl text-snow mb-6">
-                Hi, I&apos;m Abba Suraj
-              </h2>
-              <div className="space-y-4 text-snow/70 leading-relaxed">
-                <p>
-                  I founded Salix Systems with one belief: that the biggest barrier to
-                  understanding mathematics isn&apos;t intelligence — it&apos;s the lack of
-                  good visual explanations.
-                </p>
-                <p>
-                  I build with Manim Community Edition to create animations that show
-                  how numbers, patterns, and equations actually behave — not just what
-                  they look like written on a page.
-                </p>
-                <p>
-                  NumeracyHQ started as a TikTok channel. It&apos;s grown into a suite of
-                  products: an animation studio for hire, a kids&apos; learning app, and a
-                  no-code animation tool in development for math educators worldwide.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-3 mt-8">
-                <Link
-                  href="/services"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-electric text-panel font-bold text-sm hover:bg-electric/80 transition-all shadow-lg shadow-electric/25"
-                >
-                  Work With Me <ArrowRight size={16} />
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border text-snow font-semibold text-sm hover:border-electric/50 hover:bg-electric/5 transition-all"
-                >
-                  Say Hello
-                </Link>
-              </div>
+          {/* Bio */}
+          <div className="lg:col-span-2 space-y-6 text-charcoal leading-relaxed text-base">
+            <p>
+              I am an education technologist and mathematics education specialist, working at the
+              intersection of learning science, teacher professional development, and the engineering
+              required to deliver educational change at scale — specifically in Sub-Saharan Africa.
+            </p>
+            <p>
+              My background is in electrical engineering and information technology. I came to
+              education through practice, not through the academy — and that has shaped how I
+              approach the field. I am as interested in the plumbing as the theory: what actually
+              reaches teachers, what actually changes classrooms, what evidence we have for any of it.
+            </p>
+            <p>
+              Over the past [REPLACE: X years], I have worked on teacher professional development
+              programmes, curriculum design projects, and EdTech deployments across
+              [REPLACE: specific countries or regions]. Through that work, I have developed a deep
+              conviction that mathematics teacher development — done well, at scale, with a clear
+              theory of change and proper evaluation — is one of the highest-leverage investments
+              any education system can make.
+            </p>
+            <p>
+              NumeracyHQ is the public face of that conviction. It is a platform for the ideas,
+              evidence, and tools I find most useful — and a way of building a community of
+              mathematics educators who are serious about improving their practice.
+            </p>
+
+            <blockquote className="pull-quote py-2 text-navy font-display text-xl font-medium italic">
+              &ldquo;The bottleneck is not the curriculum. It is not the textbook. It is not the
+              technology. It is almost always the teacher — and the systems that support them.&rdquo;
+            </blockquote>
+
+            <p>
+              My work spans programme design, monitoring and evaluation, EdTech strategy, and content
+              production. I write, make mathematical animations, consult for organisations working in
+              African education systems, and think publicly about the evidence base for mathematics
+              education and teacher development.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── MISSION ──────────────────────────────────────────────────────── */}
+      <section className="py-16 px-6 bg-paper border-y border-sand">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-terra text-xs font-semibold uppercase tracking-widest mb-5">Mission</p>
+          <p className="font-display text-2xl sm:text-3xl text-navy font-medium leading-snug">
+            Every child in Africa deserves a mathematics teacher who knows their subject and knows
+            how to teach it. The question is how to get there — at scale, with evidence, and sustainably.
+          </p>
+        </div>
+      </section>
+
+      {/* ── EXPERTISE & WHY IT MATTERS ───────────────────────────────────── */}
+      <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+
+          <div>
+            <h2 className="font-display font-bold text-3xl text-navy mb-8">Areas of expertise</h2>
+            <ul className="space-y-3">
+              {expertise.map(item => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckCircle size={17} className="text-terra flex-shrink-0 mt-0.5" />
+                  <span className="text-charcoal text-sm leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="font-display font-bold text-3xl text-navy mb-8">Why this work matters</h2>
+            <div className="space-y-5 text-charcoal text-sm leading-relaxed">
+              <p>
+                Mathematics is a gatekeeper subject. Students who do not develop strong numeracy and
+                mathematical reasoning by the end of primary school are systematically disadvantaged —
+                in secondary school, in higher education, and in economic participation.
+              </p>
+              <p>
+                Across Sub-Saharan Africa, the data is stark. PASEC, SACMEQ, and national assessments
+                consistently show that significant proportions of students finish primary school without
+                functional numeracy. This is not primarily a question of student ability — it is a
+                question of instructional quality.
+              </p>
+              <p>
+                Teacher professional development is not the only solution, but it is the
+                highest-multiplier intervention at scale. A well-designed PD programme — grounded in
+                learning science, delivered with fidelity, and evaluated honestly — reaches every
+                student that teacher will ever teach.
+              </p>
+              <p>
+                The challenge is designing and delivering PD that actually transfers to classroom
+                practice. Most does not. Getting that right — at scale, in resource-constrained
+                contexts, with technology as an enabler rather than a distraction — is the central
+                problem I work on.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── VALUES ───────────────────────────────────────────────────────── */}
-      <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="font-display font-bold text-4xl text-snow text-center mb-16">
-            What We Stand For
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {values.map(({ icon: Icon, title, body, color, bg }) => (
-              <div key={title} className="glow-card flex flex-col p-8 rounded-2xl bg-card border border-border">
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${bg} mb-6`}>
-                  <Icon size={22} className={color} />
-                </div>
-                <h3 className="font-display font-bold text-xl text-snow mb-3">{title}</h3>
-                <p className="text-muted text-sm leading-relaxed">{body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── PRODUCTS ─────────────────────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-card/20">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="font-display font-bold text-4xl text-snow text-center mb-4">
-            The NumeracyHQ Suite
-          </h2>
-          <p className="text-muted text-center text-lg mb-16 max-w-xl mx-auto">
-            Three products. One mission.
+      {/* ── NEWSLETTER CTA ───────────────────────────────────────────────── */}
+      <section className="py-16 px-6 bg-paper border-t border-sand">
+        <div className="max-w-xl mx-auto">
+          <h2 className="font-display font-bold text-2xl text-navy mb-3">Follow the work</h2>
+          <p className="text-stone mb-6 text-sm leading-relaxed">
+            The NumeracyHQ newsletter goes out every two weeks — one teaching idea, one piece of
+            evidence, one resource. Free.
           </p>
-
-          <div className="space-y-4">
-            {products.map(({ name, status, badge, desc, href }) => (
-              <div
-                key={name}
-                className="glow-card flex flex-col sm:flex-row sm:items-center gap-5 p-6 rounded-2xl bg-card border border-border"
-              >
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <h3 className="font-display font-bold text-lg text-snow">{name}</h3>
-                    <span className={`badge border text-xs ${badge}`}>{status}</span>
-                  </div>
-                  <p className="text-muted text-sm leading-relaxed">{desc}</p>
-                </div>
-                <Link
-                  href={href}
-                  className="inline-flex items-center gap-1 text-sm font-semibold text-electric hover:gap-2 transition-all flex-shrink-0"
-                >
-                  Learn more <ArrowRight size={14} />
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA ──────────────────────────────────────────────────────────── */}
-      <section className="py-24 px-6">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-display font-bold text-4xl text-snow mb-4">
-            Let&apos;s Build Something
-          </h2>
-          <p className="text-muted text-lg mb-8">
-            Whether you need an animation, have a question, or just want to say hi —
-            my inbox is always open.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-electric text-panel font-bold text-lg hover:bg-electric/80 transition-all shadow-lg shadow-electric/25"
-          >
-            Get in Touch <ArrowRight size={20} />
-          </Link>
+          <NewsletterForm />
         </div>
       </section>
     </>

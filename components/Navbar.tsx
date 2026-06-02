@@ -6,10 +6,11 @@ import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
 const links = [
-  { href: '/services',  label: 'Services'  },
-  { href: '/portfolio', label: 'Portfolio' },
-  { href: '/app',       label: 'App'       },
-  { href: '/about',     label: 'About'     },
+  { href: '/about',      label: 'About'        },
+  { href: '/consulting', label: 'Work with me'  },
+  { href: '/writing',    label: 'Writing'       },
+  { href: '/videos',     label: 'Videos'        },
+  { href: '/resources',  label: 'Resources'     },
 ]
 
 export default function Navbar() {
@@ -23,41 +24,36 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Close mobile menu on route change
   useEffect(() => { setOpen(false) }, [pathname])
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-panel/95 backdrop-blur-md border-b border-border shadow-lg shadow-black/20'
-          : 'bg-transparent'
+          ? 'bg-cream/95 backdrop-blur-md border-b border-sand shadow-sm'
+          : 'bg-cream/80 backdrop-blur-sm'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
 
         {/* Logo */}
-        <Link href="/" className="flex flex-col leading-none group">
-          <span className="font-display font-bold text-xl text-electric tracking-tight group-hover:text-snow transition-colors">
-            NumeracyHQ
-          </span>
-          <span className="text-[10px] text-muted tracking-widest uppercase">
-            by Salix Systems
-          </span>
+        <Link
+          href="/"
+          className="font-display font-bold text-xl text-navy tracking-tight hover:text-terra transition-colors"
+        >
+          NumeracyHQ
         </Link>
 
-        {/* Desktop nav */}
+        {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-1">
           {links.map(({ href, label }) => {
-            const active = pathname === href
+            const active = pathname === href || pathname.startsWith(href + '/')
             return (
               <li key={href}>
                 <Link
                   href={href}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    active
-                      ? 'text-electric bg-electric/10'
-                      : 'text-muted hover:text-snow hover:bg-white/5'
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    active ? 'text-terra' : 'text-stone hover:text-navy'
                   }`}
                 >
                   {label}
@@ -69,15 +65,15 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <Link
-          href="/contact"
-          className="hidden md:inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-electric text-panel font-semibold text-sm hover:bg-electric/80 transition-all hover:shadow-lg hover:shadow-electric/20"
+          href="/newsletter"
+          className="hidden md:inline-flex items-center px-5 py-2 rounded-lg bg-terra text-white font-semibold text-sm hover:bg-terra-hover transition-colors"
         >
-          Get a Quote
+          Subscribe
         </Link>
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden p-2 rounded-lg text-muted hover:text-snow hover:bg-white/5 transition-colors"
+          className="md:hidden p-2 rounded-md text-stone hover:text-navy transition-colors"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -87,17 +83,15 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-card/98 backdrop-blur-md border-b border-border px-6 pb-6 pt-2 space-y-1">
+        <div className="md:hidden bg-cream border-b border-sand px-6 pb-6 pt-2 space-y-1">
           {links.map(({ href, label }) => {
-            const active = pathname === href
+            const active = pathname === href || pathname.startsWith(href + '/')
             return (
               <Link
                 key={href}
                 href={href}
-                className={`flex items-center gap-2 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                  active
-                    ? 'text-electric bg-electric/10'
-                    : 'text-snow hover:bg-white/5'
+                className={`flex items-center px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                  active ? 'text-terra' : 'text-charcoal hover:text-navy'
                 }`}
               >
                 {label}
@@ -106,10 +100,10 @@ export default function Navbar() {
           })}
           <div className="pt-2">
             <Link
-              href="/contact"
-              className="block text-center px-5 py-3 rounded-lg bg-electric text-panel font-semibold text-sm hover:bg-electric/80 transition-colors"
+              href="/newsletter"
+              className="block text-center px-5 py-3 rounded-lg bg-terra text-white font-semibold text-sm hover:bg-terra-hover transition-colors"
             >
-              Get a Quote
+              Subscribe to newsletter
             </Link>
           </div>
         </div>

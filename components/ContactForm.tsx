@@ -3,16 +3,18 @@
 import { useState } from 'react'
 
 const enquiryTypes = [
-  'Animation Services',
-  'NumeracyHQ App',
-  'NumeracyHQ Studio',
-  'Partnership',
+  'Consulting / programme design',
+  'Teacher PD facilitation',
+  'EdTech strategy & review',
+  'Speaking / advisory',
+  'Research collaboration',
+  'Press / media',
   'Other',
 ]
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'done' | 'error'>('idle')
-  const [form,   setForm]   = useState({
+  const [form, setForm]     = useState({
     name: '', email: '', type: enquiryTypes[0], message: '',
   })
 
@@ -26,10 +28,7 @@ export default function ContactForm() {
       await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
-          'form-name': 'contact',
-          ...form,
-        }).toString(),
+        body: new URLSearchParams({ 'form-name': 'contact', ...form }).toString(),
       })
       setStatus('done')
     } catch {
@@ -39,20 +38,16 @@ export default function ContactForm() {
 
   if (status === 'done') {
     return (
-      <div className="p-8 rounded-2xl bg-card border border-neon/30 text-center">
-        <p className="text-4xl mb-4">✓</p>
-        <h3 className="font-display font-bold text-xl text-neon mb-2">
-          Message received.
-        </h3>
-        <p className="text-muted text-sm">
-          We typically respond within 24 hours. Check your inbox.
-        </p>
+      <div className="text-center py-8">
+        <p className="text-terra text-4xl mb-3">✓</p>
+        <h3 className="font-display font-bold text-xl text-navy mb-2">Message received.</h3>
+        <p className="text-stone text-sm">I will be in touch within 48 hours.</p>
       </div>
     )
   }
 
   const inputClass =
-    'w-full px-4 py-3 rounded-lg bg-panel border border-border text-snow placeholder-muted text-sm focus:outline-none focus:border-electric transition-colors'
+    'w-full px-4 py-3 rounded-lg bg-cream border border-sand text-navy placeholder-stone text-sm focus:outline-none focus:ring-2 focus:ring-terra focus:border-terra transition-colors'
 
   return (
     <form
@@ -66,71 +61,57 @@ export default function ContactForm() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label className="block text-xs font-medium text-muted uppercase tracking-wider mb-2">
+          <label className="block text-xs font-semibold text-stone uppercase tracking-wider mb-2">
             Name
           </label>
           <input
-            type="text"
-            name="name"
-            required
-            value={form.name}
+            type="text" name="name" required value={form.name}
             onChange={e => update('name', e.target.value)}
-            placeholder="Your name"
-            className={inputClass}
+            placeholder="Your name" className={inputClass}
           />
         </div>
         <div>
-          <label className="block text-xs font-medium text-muted uppercase tracking-wider mb-2">
+          <label className="block text-xs font-semibold text-stone uppercase tracking-wider mb-2">
             Email
           </label>
           <input
-            type="email"
-            name="email"
-            required
-            value={form.email}
+            type="email" name="email" required value={form.email}
             onChange={e => update('email', e.target.value)}
-            placeholder="your@email.com"
-            className={inputClass}
+            placeholder="your@email.com" className={inputClass}
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-xs font-medium text-muted uppercase tracking-wider mb-2">
+        <label className="block text-xs font-semibold text-stone uppercase tracking-wider mb-2">
           Enquiry type
         </label>
         <select
-          name="type"
-          value={form.type}
+          name="type" value={form.type}
           onChange={e => update('type', e.target.value)}
           className={`${inputClass} cursor-pointer`}
         >
-          {enquiryTypes.map(t => (
-            <option key={t} value={t}>{t}</option>
-          ))}
+          {enquiryTypes.map(t => <option key={t} value={t}>{t}</option>)}
         </select>
       </div>
 
       <div>
-        <label className="block text-xs font-medium text-muted uppercase tracking-wider mb-2">
+        <label className="block text-xs font-semibold text-stone uppercase tracking-wider mb-2">
           Message
         </label>
         <textarea
-          name="message"
-          required
-          rows={5}
-          value={form.message}
+          name="message" required rows={5} value={form.message}
           onChange={e => update('message', e.target.value)}
-          placeholder="Tell us what you need — topic, length, deadline, any reference videos you like..."
+          placeholder="Describe your project, programme, or question..."
           className={`${inputClass} resize-none`}
         />
       </div>
 
       {status === 'error' && (
-        <p className="text-red-400 text-sm">
-          Something went wrong. Email us directly:{' '}
-          <a href="mailto:surajabba@gmail.com" className="underline">
-            surajabba@gmail.com
+        <p className="text-red-600 text-sm">
+          Something went wrong. Email directly:{' '}
+          <a href="mailto:surajabba650@gmail.com" className="underline">
+            surajabba650@gmail.com
           </a>
         </p>
       )}
@@ -138,14 +119,12 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full py-4 rounded-xl bg-electric text-panel font-bold text-base hover:bg-electric/80 transition-all shadow-lg shadow-electric/20 disabled:opacity-60"
+        className="w-full py-3.5 rounded-lg bg-terra text-white font-bold text-sm hover:bg-terra-hover transition-colors disabled:opacity-60"
       >
         {status === 'loading' ? 'Sending…' : 'Send Message'}
       </button>
 
-      <p className="text-muted text-xs text-center">
-        We respond within 24 hours.
-      </p>
+      <p className="text-stone text-xs text-center">I respond within 48 hours.</p>
     </form>
   )
 }

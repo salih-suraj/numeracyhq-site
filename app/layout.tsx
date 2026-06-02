@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Space_Grotesk, Inter } from 'next/font/google'
+import { Lora, Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -10,43 +10,43 @@ const inter = Inter({
   display: 'swap',
 })
 
-const spaceGrotesk = Space_Grotesk({
+const lora = Lora({
   subsets: ['latin'],
-  variable: '--font-space-grotesk',
+  variable: '--font-lora',
   display: 'swap',
 })
 
 export const metadata: Metadata = {
   title: {
-    default: 'NumeracyHQ — Mathematical Animations for Educators',
+    default: 'NumeracyHQ — Mathematics Education & Teacher Development in Africa',
     template: '%s | NumeracyHQ',
   },
   description:
-    'Custom Manim animations for online courses, YouTube channels, and educational content. Built by Salix Systems.',
+    'Technology-enabled mathematics teacher development in Africa. Evidence-based resources, research, and practitioner insights from the field.',
   keywords: [
-    'manim animation',
-    'math animation service',
-    'mathematical animation',
-    'educational animation',
-    'manim explainer video',
+    'mathematics education Africa',
+    'teacher professional development',
+    'numeracy Africa',
+    'EdTech Africa',
+    'mathematics teacher training',
     'NumeracyHQ',
-    'Salix Systems',
+    'Abba Suraj',
+    'learning science',
   ],
   authors: [{ name: 'Abba Suraj', url: 'https://numeracyhq.com' }],
-  creator: 'Salix Systems',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://numeracyhq.com',
     siteName: 'NumeracyHQ',
-    title: 'NumeracyHQ — Mathematical Animations for Educators',
+    title: 'NumeracyHQ — Mathematics Education & Teacher Development in Africa',
     description:
-      'Custom Manim animations for online courses, YouTube channels, and educational content.',
+      'Technology-enabled mathematics teacher development in Africa. Evidence-based resources, research, and practitioner insights.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NumeracyHQ — Mathematical Animations for Educators',
-    description: 'Custom Manim animations for educators and content creators.',
+    title: 'NumeracyHQ — Mathematics Education & Teacher Development in Africa',
+    description: 'Technology-enabled mathematics teacher development in Africa.',
   },
 }
 
@@ -56,8 +56,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="bg-panel text-snow antialiased">
+    <html lang="en" className={`${inter.variable} ${lora.variable}`}>
+      <body className="bg-cream text-navy antialiased">
         <Navbar />
         <main>{children}</main>
         <Footer />
