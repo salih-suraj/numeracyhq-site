@@ -97,7 +97,7 @@ export default function ConsultingPage() {
             <div className="space-y-5 text-charcoal text-sm leading-relaxed">
               <p>
                 I work on short-term consultancies, longer-term advisory retainers, and
-                project-based engagements. I am based in [REPLACE: location] and work across
+                project-based engagements. I am based in Abuja and Kano, Nigeria, and work across
                 Africa and with international partners remotely.
               </p>
               <p>

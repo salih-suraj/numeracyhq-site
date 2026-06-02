@@ -45,20 +45,7 @@ const articles = [
   },
 ]
 
-const research = [
-  {
-    citation: 'Suraj, A. (2025). [REPLACE: Full paper title]. [REPLACE: Journal or report name]. [REPLACE: DOI or URL].',
-    type:     'Journal article',
-  },
-  {
-    citation: 'Suraj, A., & [REPLACE: co-author]. (2024). [REPLACE: Full report title]. [REPLACE: Organisation / funder]. [REPLACE: URL or DOI].',
-    type:     'Technical report',
-  },
-  {
-    citation: '[REPLACE: Add additional publications in APA or Chicago format. Prioritise peer-reviewed output and commissioned reports — this is what international agencies check.]',
-    type:     'Working paper',
-  },
-]
+const research: { citation: string; type: string }[] = []
 
 export default function WritingPage() {
   return (
@@ -110,18 +97,12 @@ export default function WritingPage() {
           <h2 className="font-display font-bold text-2xl text-navy mb-3">
             Research & publications
           </h2>
-          <p className="text-stone text-sm mb-10 max-w-xl">
-            Peer-reviewed articles, technical reports, and commissioned briefs.
-            [REPLACE: add your actual publications in order of recency.]
+          <p className="text-stone text-sm max-w-xl leading-relaxed">
+            Formal publications are in progress. In the meantime, the articles above represent
+            the thinking behind the work. If you are reviewing this site for a programme or
+            funding opportunity and need more information, please{' '}
+            <a href="/contact" className="text-terra hover:underline">get in touch directly</a>.
           </p>
-          <div>
-            {research.map(({ citation, type }, i) => (
-              <div key={i} className="pub-item py-5 first:pt-0">
-                <span className="tag mb-3 inline-flex">{type}</span>
-                <p className="text-charcoal text-sm leading-relaxed">{citation}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
     </>

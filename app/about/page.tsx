@@ -51,7 +51,7 @@ export default function AboutPage() {
               <p className="text-navy text-sm font-semibold">Abba Suraj</p>
               <p className="text-stone text-sm">Education Technologist</p>
               <p className="text-stone text-sm">Mathematics Education Specialist</p>
-              <p className="text-stone text-sm">[REPLACE: Location, Nigeria]</p>
+              <p className="text-stone text-sm">Abuja · Kano, Nigeria</p>
             </div>
             <Link
               href="/consulting"
@@ -75,9 +75,8 @@ export default function AboutPage() {
               reaches teachers, what actually changes classrooms, what evidence we have for any of it.
             </p>
             <p>
-              Over the past [REPLACE: X years], I have worked on teacher professional development
-              programmes, curriculum design projects, and EdTech deployments across
-              [REPLACE: specific countries or regions]. Through that work, I have developed a deep
+              Over the past decade, I have worked on teacher professional development
+              programmes, curriculum design projects, and EdTech deployments across Nigeria. Through that work, I have developed a deep
               conviction that mathematics teacher development — done well, at scale, with a clear
               theory of change and proper evaluation — is one of the highest-leverage investments
               any education system can make.

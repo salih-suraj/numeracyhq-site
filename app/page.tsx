@@ -130,20 +130,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CREDIBILITY STRIP ────────────────────────────────────────────── */}
+      {/* ── EXPERTISE STRIP ──────────────────────────────────────────────── */}
       <section className="border-y border-sand bg-paper py-5 px-6">
         <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-x-8 gap-y-3">
-          <span className="text-stone text-xs font-medium uppercase tracking-wider">[REPLACE: NTI Nigeria]</span>
+          <span className="text-stone text-xs font-medium uppercase tracking-wider">Teacher Professional Development</span>
           <span className="text-sand hidden sm:block">·</span>
-          <span className="text-stone text-xs font-medium uppercase tracking-wider">[REPLACE: British Council]</span>
+          <span className="text-stone text-xs font-medium uppercase tracking-wider">Learning Science</span>
           <span className="text-sand hidden sm:block">·</span>
-          <span className="text-stone text-xs font-medium uppercase tracking-wider">[REPLACE: UNESCO]</span>
+          <span className="text-stone text-xs font-medium uppercase tracking-wider">Curriculum Design</span>
           <span className="text-sand hidden sm:block">·</span>
-          <span className="text-stone text-xs font-medium uppercase tracking-wider">[REPLACE: UNICEF]</span>
+          <span className="text-stone text-xs font-medium uppercase tracking-wider">EdTech Strategy</span>
           <span className="text-sand hidden sm:block">·</span>
-          <span className="text-stone text-xs font-medium uppercase tracking-wider">[REPLACE: Ministry of Education]</span>
+          <span className="text-stone text-xs font-medium uppercase tracking-wider">Monitoring & Evaluation</span>
           <span className="text-sand hidden sm:block">·</span>
-          <span className="text-stone text-xs font-medium uppercase tracking-wider">[REPLACE: Your EdTech Company]</span>
+          <span className="text-stone text-xs font-medium uppercase tracking-wider">Numeracy</span>
         </div>
       </section>
 
