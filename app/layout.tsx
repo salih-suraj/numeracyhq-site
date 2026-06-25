@@ -18,20 +18,20 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   title: {
-    default: 'NumeracyHQ — Mathematics Education & Teacher Development in Africa',
+    default: 'NumeracyHQ — Math, finally explained so it clicks',
     template: '%s | NumeracyHQ',
   },
   description:
-    'Technology-enabled mathematics teacher development in Africa. Evidence-based resources, research, and practitioner insights from the field.',
+    'Animated math lessons that build real intuition. You weren’t bad at math — you were taught it wrong. Get the lessons that finally make it click.',
   keywords: [
-    'mathematics education Africa',
-    'teacher professional development',
-    'numeracy Africa',
-    'EdTech Africa',
-    'mathematics teacher training',
+    'learn math',
+    'animated math lessons',
+    'understand math',
+    'math intuition',
+    'fractions explained',
+    'algebra explained',
+    'math anxiety',
     'NumeracyHQ',
-    'Abba Suraj',
-    'learning science',
   ],
   authors: [{ name: 'Abba Suraj', url: 'https://numeracyhq.com' }],
   openGraph: {
@@ -39,14 +39,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://numeracyhq.com',
     siteName: 'NumeracyHQ',
-    title: 'NumeracyHQ — Mathematics Education & Teacher Development in Africa',
+    title: 'You weren’t bad at math. You were taught it wrong.',
     description:
-      'Technology-enabled mathematics teacher development in Africa. Evidence-based resources, research, and practitioner insights.',
+      'Animated math lessons that build real intuition — the ones that finally make it click.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NumeracyHQ — Mathematics Education & Teacher Development in Africa',
-    description: 'Technology-enabled mathematics teacher development in Africa.',
+    title: 'You weren’t bad at math. You were taught it wrong.',
+    description: 'Animated math lessons that finally make it click.',
   },
 }
 

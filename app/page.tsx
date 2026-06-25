@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, BookOpen, Users, BarChart3 } from 'lucide-react'
+import { ArrowRight, Film, Lightbulb, BarChart3 } from 'lucide-react'
 import NewsletterForm from '@/components/NewsletterForm'
 
 function CoordinateSVG() {
@@ -43,46 +43,27 @@ function CoordinateSVG() {
   )
 }
 
-const whatIDo = [
+const whyItClicks = [
   {
-    icon: Users,
-    title: 'Teacher Development',
-    body: 'Designing and evaluating professional development programmes for mathematics teachers across Sub-Saharan Africa, with a focus on classroom transfer and system-level change.',
+    icon: Film,
+    title: 'Animation-first',
+    body: 'We don’t just tell you the rule — we show you the picture that makes it obvious. Every concept is built frame by frame to create one unforgettable “oh, THAT’s why” moment.',
   },
   {
-    icon: BookOpen,
-    title: 'Learning Science & Numeracy',
-    body: 'Applying evidence from cognitive science and mathematics education research to curriculum design, instructional materials, and assessment — especially in under-resourced contexts.',
+    icon: Lightbulb,
+    title: 'Intuition before rules',
+    body: 'Understand why something works and the how sticks for good. No more memorising steps that fall out of your head by next week — the picture stays with you.',
   },
   {
     icon: BarChart3,
-    title: 'EdTech, Evaluated',
-    body: 'Building, procuring, and critically reviewing education technology tools — with monitoring frameworks, data infrastructure, and evidence of impact built in from the start.',
+    title: 'Mastery, not cramming',
+    body: 'Short lessons that adapt to you and only move on once a concept has truly landed. Quiet, steady progress you can actually see.',
   },
 ]
 
 const featuredVideos = [
   { id: 'ksvfU_CUmm0', title: 'Statistics Explained Through Animation', topic: 'Statistics' },
   { id: 'ETFna9v6Yqc', title: 'Mathematical Visualization with Manim',  topic: 'Mathematics' },
-  { id: '[REPLACE-VIDEO-ID]', title: '[REPLACE: Video 3 title]',         topic: '[REPLACE]'  },
-]
-
-const featuredWriting = [
-  {
-    title:   'Why Teacher Development, Not Technology, Is the Real EdTech Solution',
-    date:    'June 2025',
-    summary: 'The evidence is clear: tool adoption without teacher capacity is inert. What the research says about where to invest — and why PD almost always wins.',
-  },
-  {
-    title:   'The Numeracy Gap: What the Data Says About Mathematics in Sub-Saharan Africa',
-    date:    'April 2025',
-    summary: 'A synthesis of PASEC, SACMEQ, and national assessments — what it reveals about where students lose ground, and what the patterns suggest for intervention design.',
-  },
-  {
-    title:   'Designing PD Programmes that Actually Change Classroom Practice',
-    date:    'February 2025',
-    summary: 'Most teacher training does not transfer to the classroom. What design features predict classroom transfer — and how to build them in from the start.',
-  },
 ]
 
 export default function HomePage() {
@@ -97,28 +78,28 @@ export default function HomePage() {
           {/* Copy */}
           <div>
             <p className="text-terra text-sm font-semibold uppercase tracking-widest mb-6">
-              Mathematics Education · Teacher Development · Africa
+              Animated math that finally clicks
             </p>
             <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-[3.25rem] leading-[1.1] text-navy mb-6">
-              Helping African education systems teach mathematics better.
+              You weren’t bad at math. You were taught it wrong.
             </h1>
             <p className="text-charcoal text-lg leading-relaxed mb-10 max-w-xl">
-              Combining learning science, teacher professional development, and the engineering
-              to deliver it at scale — so that every child has access to a mathematics teacher
-              who knows their subject and how to teach it.
+              Animated lessons that build real intuition — so the rules finally make sense
+              instead of just getting memorised. For anyone who’s ever felt stuck, and for
+              the parents helping a kid through it.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
-                href="/newsletter"
+                href="#newsletter"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-terra text-white font-semibold text-base hover:bg-terra-hover transition-colors"
               >
-                Subscribe to the newsletter
+                Get the lessons
               </Link>
               <Link
-                href="/consulting"
+                href="/videos"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border border-sand text-navy font-semibold text-base hover:border-terra hover:text-terra transition-colors"
               >
-                Work with me <ArrowRight size={17} />
+                Watch a lesson <ArrowRight size={17} />
               </Link>
             </div>
           </div>
@@ -130,35 +111,35 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── EXPERTISE STRIP ──────────────────────────────────────────────── */}
+      {/* ── CONCEPTS STRIP ───────────────────────────────────────────────── */}
       <section className="border-y border-sand bg-paper py-5 px-6">
         <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-x-8 gap-y-3">
-          <span className="text-stone text-xs font-medium uppercase tracking-wider">Teacher Professional Development</span>
+          <span className="text-stone text-xs font-medium uppercase tracking-wider">Fractions</span>
           <span className="text-sand hidden sm:block">·</span>
-          <span className="text-stone text-xs font-medium uppercase tracking-wider">Learning Science</span>
+          <span className="text-stone text-xs font-medium uppercase tracking-wider">Negative Numbers</span>
           <span className="text-sand hidden sm:block">·</span>
-          <span className="text-stone text-xs font-medium uppercase tracking-wider">Curriculum Design</span>
+          <span className="text-stone text-xs font-medium uppercase tracking-wider">Algebra</span>
           <span className="text-sand hidden sm:block">·</span>
-          <span className="text-stone text-xs font-medium uppercase tracking-wider">EdTech Strategy</span>
+          <span className="text-stone text-xs font-medium uppercase tracking-wider">Number Sense</span>
           <span className="text-sand hidden sm:block">·</span>
-          <span className="text-stone text-xs font-medium uppercase tracking-wider">Monitoring & Evaluation</span>
+          <span className="text-stone text-xs font-medium uppercase tracking-wider">Order of Operations</span>
           <span className="text-sand hidden sm:block">·</span>
-          <span className="text-stone text-xs font-medium uppercase tracking-wider">Numeracy</span>
+          <span className="text-stone text-xs font-medium uppercase tracking-wider">Place Value</span>
         </div>
       </section>
 
-      {/* ── WHAT I DO ────────────────────────────────────────────────────── */}
+      {/* ── WHY IT CLICKS ────────────────────────────────────────────────── */}
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="mb-14">
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy mb-4">What I do</h2>
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy mb-4">See the idea. Then you never forget it.</h2>
             <p className="text-stone text-lg max-w-2xl">
-              Three overlapping areas of practice, each grounded in evidence and orientated toward what actually improves outcomes for learners.
+              Most math apps are dressed-up worksheets. We’re the opposite — every concept is an animation built to make one idea click and stay clicked.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {whatIDo.map(({ icon: Icon, title, body }) => (
+            {whyItClicks.map(({ icon: Icon, title, body }) => (
               <div key={title} className="card-hover p-8 rounded-xl bg-white border border-sand">
                 <div className="w-10 h-10 rounded-lg bg-terra-subtle flex items-center justify-center mb-6">
                   <Icon size={20} className="text-terra" />
@@ -170,8 +151,8 @@ export default function HomePage() {
           </div>
 
           <div className="mt-10">
-            <Link href="/consulting" className="inline-flex items-center gap-1 text-terra text-sm font-semibold link-terra">
-              See how I work with organisations <ArrowRight size={14} />
+            <Link href="#newsletter" className="inline-flex items-center gap-1 text-terra text-sm font-semibold link-terra">
+              Get the lessons that make it click <ArrowRight size={14} />
             </Link>
           </div>
         </div>
@@ -182,8 +163,8 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
             <div>
-              <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy mb-2">Mathematical animations</h2>
-              <p className="text-stone">Visual explanations of mathematics, made with Manim Community Edition.</p>
+              <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy mb-2">Watch a “wait, THAT’s why?!” moment</h2>
+              <p className="text-stone">This is how we teach everything — visual explanations made frame by frame with Manim.</p>
             </div>
             <Link href="/videos" className="inline-flex items-center gap-1 text-terra text-sm font-semibold">
               All videos <ArrowRight size={14} />
@@ -224,51 +205,43 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── FEATURED WRITING ─────────────────────────────────────────────── */}
+      {/* ── PROBLEM ──────────────────────────────────────────────────────── */}
       <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
-            <div>
-              <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy mb-2">Recent writing</h2>
-              <p className="text-stone">Evidence-based thinking on mathematics education and teacher development.</p>
-            </div>
-            <Link href="/writing" className="inline-flex items-center gap-1 text-terra text-sm font-semibold">
-              All writing <ArrowRight size={14} />
-            </Link>
+        <div className="max-w-3xl mx-auto">
+          <p className="text-terra text-sm font-semibold uppercase tracking-widest mb-6">Sound familiar?</p>
+          <div className="pull-quote space-y-5">
+            <p className="font-display text-2xl sm:text-3xl text-navy leading-snug">
+              “Flip and multiply.” “A negative times a negative is a positive.” “Just memorise PEMDAS.”
+            </p>
+            <p className="text-charcoal text-lg leading-relaxed">
+              You learned the tricks. Nobody ever showed you <em>why</em> they work — so math
+              became a pile of rules to fear instead of something that makes sense.
+            </p>
+            <p className="text-charcoal text-lg leading-relaxed">
+              That’s not your fault. It’s a teaching problem. And it’s fixable — about five
+              minutes a concept, one clear picture at a time.
+            </p>
           </div>
-
-          <div className="border border-sand rounded-xl overflow-hidden">
-            {featuredWriting.map(({ title, date, summary }) => (
-              <Link
-                key={title}
-                href="/writing"
-                className="flex flex-col sm:flex-row gap-4 sm:gap-8 p-6 bg-white border-b border-sand last:border-b-0 hover:bg-paper transition-colors group"
-              >
-                <div className="flex-shrink-0 text-stone text-sm pt-0.5 w-28">{date}</div>
-                <div>
-                  <h3 className="font-display font-semibold text-navy text-lg mb-1 group-hover:text-terra transition-colors">
-                    {title}
-                  </h3>
-                  <p className="text-stone text-sm leading-relaxed">{summary}</p>
-                </div>
-              </Link>
-            ))}
+          <div className="mt-8">
+            <Link href="#newsletter" className="inline-flex items-center gap-1 text-terra text-base font-semibold link-terra">
+              Start with the lessons that make it click <ArrowRight size={15} />
+            </Link>
           </div>
         </div>
       </section>
 
       {/* ── NEWSLETTER BAND ──────────────────────────────────────────────── */}
-      <section className="py-20 px-6 newsletter-band">
+      <section id="newsletter" className="py-20 px-6 newsletter-band scroll-mt-20">
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-terra-light text-xs font-semibold uppercase tracking-widest mb-4">
             The NumeracyHQ Newsletter
           </p>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-cream mb-4">
-            One idea. One piece of evidence.<br className="hidden sm:block" /> One resource.
+            One idea that makes math click.<br className="hidden sm:block" /> Every week.
           </h2>
           <p className="text-cream/70 mb-8 text-base leading-relaxed">
-            Every two weeks, for mathematics educators who want to teach better.
-            No hype. No noise. Just substance.
+            For anyone who wants to finally <em>understand</em> math — not just survive it.
+            One beautifully explained idea at a time. No hype. No noise.
           </p>
           <div className="max-w-md mx-auto">
             <NewsletterForm variant="dark" />
@@ -283,24 +256,24 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy mb-5">
-                About Abba Suraj
+                Who’s behind this
               </h2>
               <div className="space-y-4 text-charcoal leading-relaxed">
                 <p>
-                  I am an education technologist and mathematics education specialist, working
-                  on the problem of technology-enabled teacher development in Africa.
+                  I’m Abba Suraj — a mathematician and engineer who got tired of watching sharp,
+                  capable people walk around believing they’re “just bad at math.”
                 </p>
                 <p>
-                  My background combines electrical engineering and information technology with
-                  years of practical work in teacher professional development and EdTech deployment
-                  across Sub-Saharan Africa. NumeracyHQ is the public face of that work.
+                  Almost nobody is. They were handed rules without reasons. So I make every lesson
+                  by hand, frame by frame, with the same animation tools the best math explainers
+                  use — because the right picture can do what a thousand worksheets can’t.
                 </p>
               </div>
               <Link
                 href="/about"
                 className="inline-flex items-center gap-1 mt-8 text-terra font-semibold text-sm link-terra"
               >
-                Read my full bio <ArrowRight size={14} />
+                More about me <ArrowRight size={14} />
               </Link>
             </div>
             <div className="flex justify-center md:justify-end">
@@ -308,14 +281,14 @@ export default function HomePage() {
                 <div className="w-60 h-60 rounded-2xl overflow-hidden border border-sand shadow-md">
                   <Image
                     src="/abba-suraj.png"
-                    alt="Abba Suraj — Education Technologist"
+                    alt="Abba Suraj — founder of NumeracyHQ"
                     width={240}
                     height={240}
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute -bottom-3 -right-3 px-3 py-1.5 rounded-lg bg-white border border-sand shadow-sm">
-                  <span className="text-stone text-xs font-medium">Mathematics Education · EdTech · Africa</span>
+                  <span className="text-stone text-xs font-medium">Mathematics · Animation · Built by hand</span>
                 </div>
               </div>
             </div>

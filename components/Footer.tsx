@@ -2,13 +2,12 @@ import Link from 'next/link'
 import { Youtube, Mail, Linkedin } from 'lucide-react'
 
 const nav = [
-  { href: '/about',      label: 'About'        },
-  { href: '/consulting', label: 'Work with me'  },
-  { href: '/writing',    label: 'Writing'       },
-  { href: '/videos',     label: 'Videos'        },
-  { href: '/resources',  label: 'Resources'     },
-  { href: '/newsletter', label: 'Newsletter'    },
-  { href: '/contact',    label: 'Contact'       },
+  { href: '/videos',     label: 'Videos'     },
+  { href: '/app',        label: 'The App'    },
+  { href: '/about',      label: 'About'      },
+  { href: '/resources',  label: 'Resources'  },
+  { href: '/newsletter', label: 'Newsletter' },
+  { href: '/contact',    label: 'Contact'    },
 ]
 
 export default function Footer() {
@@ -22,16 +21,16 @@ export default function Footer() {
             The NumeracyHQ Newsletter
           </p>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-cream mb-3">
-            One idea. One piece of evidence. One resource.
+            One idea that makes math click. Every week.
           </h2>
           <p className="text-cream/70 mb-8 text-base">
-            Every two weeks, for mathematics educators who want to teach better.
+            For anyone who wants to finally understand math — not just survive it.
           </p>
           <Link
-            href="/newsletter"
+            href="/#newsletter"
             className="inline-flex items-center px-7 py-3 rounded-lg bg-terra text-white font-semibold text-sm hover:bg-terra-hover transition-colors"
           >
-            Subscribe — it&apos;s free
+            Get the lessons — it&apos;s free
           </Link>
         </div>
       </div>
@@ -47,7 +46,7 @@ export default function Footer() {
                 NumeracyHQ
               </Link>
               <p className="text-stone text-sm mt-3 leading-relaxed">
-                Helping African education systems teach mathematics better — through learning science, teacher development, and the engineering to deliver it at scale.
+                Animated math lessons that build real intuition — so it finally clicks instead of just getting memorised.
               </p>
             </div>
 
@@ -109,7 +108,7 @@ export default function Footer() {
               © {new Date().getFullYear()} NumeracyHQ · Abba Suraj. All rights reserved.
             </p>
             <p className="text-stone text-xs italic">
-              Technology-enabled mathematics teacher development in Africa.
+              Math, finally explained so it clicks.
             </p>
           </div>
         </div>

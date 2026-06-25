@@ -6,11 +6,10 @@ import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
 const links = [
-  { href: '/about',      label: 'About'        },
-  { href: '/consulting', label: 'Work with me'  },
-  { href: '/writing',    label: 'Writing'       },
-  { href: '/videos',     label: 'Videos'        },
-  { href: '/resources',  label: 'Resources'     },
+  { href: '/videos',     label: 'Videos'      },
+  { href: '/app',        label: 'The App'     },
+  { href: '/about',      label: 'About'       },
+  { href: '/resources',  label: 'Resources'   },
 ]
 
 export default function Navbar() {
@@ -65,10 +64,10 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <Link
-          href="/newsletter"
+          href="/#newsletter"
           className="hidden md:inline-flex items-center px-5 py-2 rounded-lg bg-terra text-white font-semibold text-sm hover:bg-terra-hover transition-colors"
         >
-          Subscribe
+          Get the lessons
         </Link>
 
         {/* Mobile hamburger */}
@@ -100,10 +99,10 @@ export default function Navbar() {
           })}
           <div className="pt-2">
             <Link
-              href="/newsletter"
+              href="/#newsletter"
               className="block text-center px-5 py-3 rounded-lg bg-terra text-white font-semibold text-sm hover:bg-terra-hover transition-colors"
             >
-              Subscribe to newsletter
+              Get the lessons
             </Link>
           </div>
         </div>

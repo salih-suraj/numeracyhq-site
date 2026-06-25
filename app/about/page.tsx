@@ -7,18 +7,16 @@ import NewsletterForm from '@/components/NewsletterForm'
 export const metadata: Metadata = {
   title: 'About — Abba Suraj',
   description:
-    'Education technologist and mathematics education specialist working on technology-enabled teacher development in Africa.',
+    'I’m Abba Suraj — a mathematician and engineer who makes animated math lessons that finally make sense. The story behind NumeracyHQ.',
 }
 
 const expertise = [
-  'Mathematics teacher professional development — design, facilitation, and evaluation',
-  'Curriculum alignment and instructional materials development',
-  'Learning science and cognitive science applied to mathematics education',
-  'Monitoring, evaluation, and learning (MEL) frameworks for education programmes',
-  'EdTech strategy, architecture, and independent evidence-based review',
-  'Numeracy and early mathematics — assessment, pedagogy, and intervention design',
-  'Programme design for large-scale and donor-funded education initiatives',
-  'Mathematical visualization and animated content production (Manim)',
+  'Mathematical animation and visual explanation (Manim)',
+  'Making hard ideas intuitive — fractions, negative numbers, the leap into algebra',
+  'Lesson and curriculum design grounded in learning science',
+  'Mastery-based learning that adapts to the learner',
+  'Number sense and early mathematics — how understanding actually forms',
+  'Building the software that delivers all of it',
 ]
 
 export default function AboutPage() {
@@ -41,7 +39,7 @@ export default function AboutPage() {
             <div className="w-full max-w-[260px] rounded-2xl overflow-hidden border border-sand shadow-sm">
               <Image
                 src="/abba-suraj.png"
-                alt="Abba Suraj — Education Technologist"
+                alt="Abba Suraj — founder of NumeracyHQ"
                 width={260}
                 height={320}
                 className="w-full h-auto object-cover"
@@ -49,54 +47,51 @@ export default function AboutPage() {
             </div>
             <div className="space-y-1.5">
               <p className="text-navy text-sm font-semibold">Abba Suraj</p>
-              <p className="text-stone text-sm">Education Technologist</p>
-              <p className="text-stone text-sm">Mathematics Education Specialist</p>
+              <p className="text-stone text-sm">Founder, NumeracyHQ</p>
+              <p className="text-stone text-sm">Mathematician &amp; Engineer</p>
               <p className="text-stone text-sm">Abuja · Kano, Nigeria</p>
             </div>
             <Link
-              href="/consulting"
+              href="/#newsletter"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-terra text-white font-semibold text-sm hover:bg-terra-hover transition-colors"
             >
-              Work with me <ArrowRight size={15} />
+              Get the lessons <ArrowRight size={15} />
             </Link>
           </div>
 
           {/* Bio */}
           <div className="lg:col-span-2 space-y-6 text-charcoal leading-relaxed text-base">
             <p>
-              I am an education technologist and mathematics education specialist, working at the
-              intersection of learning science, teacher professional development, and the engineering
-              required to deliver educational change at scale — specifically in Sub-Saharan Africa.
+              I’m Abba Suraj. I build NumeracyHQ — animated math lessons that try to do one
+              stubborn thing: make math actually <em>make sense</em>.
             </p>
             <p>
               My background is in electrical engineering and information technology. I came to
-              education through practice, not through the academy — and that has shaped how I
-              approach the field. I am as interested in the plumbing as the theory: what actually
-              reaches teachers, what actually changes classrooms, what evidence we have for any of it.
+              math the way a lot of people do — through building things, not through the academy.
+              That shaped how I think about it: I’m as interested in the picture as the proof,
+              in what actually makes an idea click inside someone’s head.
             </p>
             <p>
-              Over the past decade, I have worked on teacher professional development
-              programmes, curriculum design projects, and EdTech deployments across Nigeria. Through that work, I have developed a deep
-              conviction that mathematics teacher development — done well, at scale, with a clear
-              theory of change and proper evaluation — is one of the highest-leverage investments
-              any education system can make.
+              And I kept meeting the same person. Smart, capable, quietly convinced they were
+              “just bad at math.” Almost none of them were. They’d been handed rules without
+              reasons — flip and multiply, two negatives make a positive, just memorise it —
+              until math stopped being something you understand and became something you fear.
             </p>
             <p>
-              NumeracyHQ is the public face of that conviction. It is a platform for the ideas,
-              evidence, and tools I find most useful — and a way of building a community of
-              mathematics educators who are serious about improving their practice.
+              So I make every lesson by hand, frame by frame, with the same animation tools the
+              best math explainers use. Because the right picture can do in fifteen seconds what
+              a thousand worksheets never will. NumeracyHQ is where those lessons live.
             </p>
 
             <blockquote className="pull-quote py-2 text-navy font-display text-xl font-medium italic">
-              &ldquo;The bottleneck is not the curriculum. It is not the textbook. It is not the
-              technology. It is almost always the teacher — and the systems that support them.&rdquo;
+              &ldquo;The problem was almost never the student. It was almost always the
+              explanation.&rdquo;
             </blockquote>
 
             <p>
-              My work spans programme design, monitoring and evaluation, EdTech strategy, and content
-              production. I write, make mathematical animations, consult for organisations working in
-              African education systems, and think publicly about the evidence base for mathematics
-              education and teacher development.
+              Today I’m building NumeracyHQ into the place math finally clicks — starting with
+              the concepts people get stuck on most: fractions, negative numbers, and the leap
+              into algebra. One clear picture at a time.
             </p>
           </div>
         </div>
@@ -107,8 +102,8 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-terra text-xs font-semibold uppercase tracking-widest mb-5">Mission</p>
           <p className="font-display text-2xl sm:text-3xl text-navy font-medium leading-snug">
-            Every child in Africa deserves a mathematics teacher who knows their subject and knows
-            how to teach it. The question is how to get there — at scale, with evidence, and sustainably.
+            Nobody should grow up believing they’re “just bad at math.” Almost no one is. The
+            goal is simple — make the ideas visible, so they make sense the first time.
           </p>
         </div>
       </section>
@@ -118,7 +113,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
 
           <div>
-            <h2 className="font-display font-bold text-3xl text-navy mb-8">Areas of expertise</h2>
+            <h2 className="font-display font-bold text-3xl text-navy mb-8">What I do</h2>
             <ul className="space-y-3">
               {expertise.map(item => (
                 <li key={item} className="flex items-start gap-3">
@@ -130,30 +125,26 @@ export default function AboutPage() {
           </div>
 
           <div>
-            <h2 className="font-display font-bold text-3xl text-navy mb-8">Why this work matters</h2>
+            <h2 className="font-display font-bold text-3xl text-navy mb-8">Why this matters</h2>
             <div className="space-y-5 text-charcoal text-sm leading-relaxed">
               <p>
-                Mathematics is a gatekeeper subject. Students who do not develop strong numeracy and
-                mathematical reasoning by the end of primary school are systematically disadvantaged —
-                in secondary school, in higher education, and in economic participation.
+                Math is a gatekeeper subject. Fall behind early and it quietly closes doors —
+                in school, in confidence, in the kinds of work and study that stay open to you.
               </p>
               <p>
-                Across Sub-Saharan Africa, the data is stark. PASEC, SACMEQ, and national assessments
-                consistently show that significant proportions of students finish primary school without
-                functional numeracy. This is not primarily a question of student ability — it is a
-                question of instructional quality.
+                But most people who struggle aren’t short on ability. They’re short on a good
+                explanation. Somewhere along the way they were taught the <em>steps</em> and never
+                the <em>why</em> — and once math becomes memorisation, it becomes forgettable and
+                frightening at the same time.
               </p>
               <p>
-                Teacher professional development is not the only solution, but it is the
-                highest-multiplier intervention at scale. A well-designed PD programme — grounded in
-                learning science, delivered with fidelity, and evaluated honestly — reaches every
-                student that teacher will ever teach.
+                Visual, intuition-first teaching fixes that. When you can <em>see</em> why something
+                works, you don’t have to memorise it — and you don’t forget it. That’s the entire
+                idea behind everything I make.
               </p>
               <p>
-                The challenge is designing and delivering PD that actually transfers to classroom
-                practice. Most does not. Getting that right — at scale, in resource-constrained
-                contexts, with technology as an enabler rather than a distraction — is the central
-                problem I work on.
+                Get that right, at scale, and you change how a lot of people feel about a subject
+                they were told they’d never be good at. That’s the problem I work on.
               </p>
             </div>
           </div>
@@ -163,10 +154,10 @@ export default function AboutPage() {
       {/* ── NEWSLETTER CTA ───────────────────────────────────────────────── */}
       <section className="py-16 px-6 bg-paper border-t border-sand">
         <div className="max-w-xl mx-auto">
-          <h2 className="font-display font-bold text-2xl text-navy mb-3">Follow the work</h2>
+          <h2 className="font-display font-bold text-2xl text-navy mb-3">Follow along</h2>
           <p className="text-stone mb-6 text-sm leading-relaxed">
-            The NumeracyHQ newsletter goes out every two weeks — one teaching idea, one piece of
-            evidence, one resource. Free.
+            The NumeracyHQ newsletter goes out every week — one idea that makes math click,
+            beautifully explained. Free.
           </p>
           <NewsletterForm />
         </div>
