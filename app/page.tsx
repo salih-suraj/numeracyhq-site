@@ -62,8 +62,9 @@ const whyItClicks = [
 ]
 
 const featuredVideos = [
-  { id: 'ksvfU_CUmm0', title: 'Statistics Explained Through Animation', topic: 'Statistics' },
-  { id: 'ETFna9v6Yqc', title: 'Mathematical Visualization with Manim',  topic: 'Mathematics' },
+  { id: 'khRu2-baG1U', title: 'Why “flip and multiply” actually works', topic: 'Fractions' },
+  { id: 'Rn-PYOqOJ2A', title: 'Why negative × negative = positive',      topic: 'Algebra'   },
+  { id: 'NEgGdDi6LBw', title: 'Why × can make a number smaller',          topic: 'Fractions' },
 ]
 
 export default function HomePage() {

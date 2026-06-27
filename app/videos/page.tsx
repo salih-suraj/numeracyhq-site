@@ -2,34 +2,34 @@ import type { Metadata } from 'next'
 import { VideoEmbed } from '@/components/VideoEmbed'
 
 export const metadata: Metadata = {
-  title: 'Videos — Mathematical Animations',
+  title: 'Lessons — Animated math that clicks',
   description:
-    'Mathematical animations and visual explanations made with Manim Community Edition, organised by topic.',
+    'Short, animated math lessons that make one idea click — fractions, negatives, algebra, and more. New ones every week.',
 }
 
 const series: { name: string; videos: { id: string; title: string; description: string }[] }[] = [
   {
-    name: 'Statistics',
+    name: 'Fractions',
     videos: [
       {
-        id:          'ksvfU_CUmm0',
-        title:       'Statistics Explained Through Animation',
-        description: 'A visual walkthrough of key statistical concepts — mean, variance, and distribution — using Manim-based animation.',
+        id:          'khRu2-baG1U',
+        title:       'Why “flip and multiply” actually works',
+        description: 'Dividing fractions isn’t a trick — it’s just asking “how many of these fit into that?” Here’s the picture your teacher skipped.',
+      },
+      {
+        id:          'NEgGdDi6LBw',
+        title:       'Why multiplying can make a number SMALLER',
+        description: '“×” never meant “make bigger” — it means “take this much of.” Take half of something and of course it shrinks.',
       },
     ],
   },
   {
-    name: 'Mathematics',
+    name: 'Algebra',
     videos: [
       {
-        id:          'ETFna9v6Yqc',
-        title:       'Mathematical Visualization with Manim',
-        description: 'Exploring how Manim Community Edition can be used to bring mathematical ideas to life for learners at any level.',
-      },
-      {
-        id:          '[REPLACE-VIDEO-ID]',
-        title:       '[REPLACE: Video title]',
-        description: '[REPLACE: Short description of what this video covers and who it is for.]',
+        id:          'Rn-PYOqOJ2A',
+        title:       'Why negative × negative = positive',
+        description: 'Multiplying by a negative means “flip direction.” Flip twice and you’re facing forward again — that’s the whole secret.',
       },
     ],
   },
@@ -41,13 +41,13 @@ export default function VideosPage() {
       {/* ── HEADER ───────────────────────────────────────────────────────── */}
       <section className="pt-28 pb-16 px-6 border-b border-sand">
         <div className="max-w-4xl mx-auto">
-          <p className="text-terra text-sm font-semibold uppercase tracking-widest mb-4">Videos</p>
+          <p className="text-terra text-sm font-semibold uppercase tracking-widest mb-4">Lessons</p>
           <h1 className="font-display font-bold text-4xl sm:text-5xl text-navy mb-6">
-            Mathematical animations
+            Math, finally explained so it clicks
           </h1>
           <p className="text-charcoal text-xl max-w-2xl leading-relaxed">
-            Visual explanations of mathematics, made with Manim Community Edition. Organised by
-            topic — click any thumbnail to play.
+            Short, animated lessons that make one idea click — built frame by frame. New ones
+            every week. Tap any thumbnail to play.
           </p>
           <a
             href="https://www.youtube.com/@NumeracyHQ"
