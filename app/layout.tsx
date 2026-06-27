@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Lora, Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -61,6 +62,16 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        {/* Analytics — Plausible (privacy-friendly, no cookie banner needed).
+            Only records once numeracyhq.com is added in a Plausible account.
+            FREE SWAP if cost is an issue: replace this with Cloudflare Web
+            Analytics' beacon snippet (free forever, just needs your token). */}
+        <Script
+          defer
+          data-domain="numeracyhq.com"
+          src="https://plausible.io/js/script.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
